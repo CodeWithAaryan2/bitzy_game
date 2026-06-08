@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Fredoka:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary - Bright Green (Duolingo-inspired but tuned) */
+    --background: 0 0% 100%;
+    --foreground: 220 20% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 20%;
+    --primary: 106 72% 47%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 20% 20%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 35 100% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 106 72% 47%;
+    --radius: 1rem;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 20% 20%;
+    --sidebar-primary: 106 72% 47%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 220 20% 20%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 106 72% 47%;
+
+    /* Game colors */
+    --bitxy-green: #58CC02;
+    --bitxy-green-dark: #48A702;
+    --bitxy-green-light: #89E219;
+    --bitxy-blue: #1CB0F6;
+    --bitxy-blue-dark: #1899D6;
+    --bitxy-orange: #FF9600;
+    --bitxy-red: #FF4B4B;
+    --bitxy-purple: #CE82FF;
+    --bitxy-pink: #FF7DB8;
+    --bitxy-yellow: #FFC800;
+    --bitxy-cyan: #00CDD7;
+    --bitxy-navy: #3C4D7A;
+
+    --xp-color: #FFC800;
+    --gems-color: #1CB0F6;
+    --hearts-color: #FF4B4B;
+    --streak-color: #FF9600;
+  }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    @apply bg-gray-50 text-gray-800 antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fredoka', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Fredoka', sans-serif;
+  }
+
+  .bitxy-btn {
+    @apply font-bold rounded-2xl transition-all duration-150 active:scale-95;
+    box-shadow: 0 4px 0 0 rgba(0,0,0,0.15);
+  }
+  .bitxy-btn:active {
+    box-shadow: 0 0 0 0 rgba(0,0,0,0.15);
+    transform: translateY(4px);
+  }
+
+  .bitxy-btn-green {
+    @apply bg-[#58CC02] text-white hover:bg-[#4DB802];
+    box-shadow: 0 4px 0 0 #48A702;
+  }
+  .bitxy-btn-green:active {
+    box-shadow: 0 0 0 0 #48A702;
+  }
+
+  .bitxy-btn-blue {
+    @apply bg-[#1CB0F6] text-white hover:bg-[#1899D6];
+    box-shadow: 0 4px 0 0 #1899D6;
+  }
+  .bitxy-btn-blue:active {
+    box-shadow: 0 0 0 0 #1899D6;
+  }
+
+  .bitxy-btn-orange {
+    @apply bg-[#FF9600] text-white hover:bg-[#E68800];
+    box-shadow: 0 4px 0 0 #D67A00;
+  }
+  .bitxy-btn-orange:active {
+    box-shadow: 0 0 0 0 #D67A00;
+  }
+
+  .bitxy-btn-purple {
+    @apply bg-[#CE82FF] text-white hover:bg-[#B86CE8];
+    box-shadow: 0 4px 0 0 #A855C7;
+  }
+  .bitxy-btn-purple:active {
+    box-shadow: 0 0 0 0 #A855C7;
+  }
+
+  .bitxy-btn-red {
+    @apply bg-[#FF4B4B] text-white hover:bg-[#E84343];
+    box-shadow: 0 4px 0 0 #D63636;
+  }
+  .bitxy-btn-red:active {
+    box-shadow: 0 0 0 0 #D63636;
+  }
+
+  .bitxy-card {
+    @apply bg-white rounded-2xl border-2 border-gray-100;
+    box-shadow: 0 4px 0 0 rgba(0,0,0,0.04);
+  }
+
+  .bitxy-card-green {
+    @apply bg-white rounded-2xl border-2 border-[#58CC02]/30;
+    box-shadow: 0 4px 0 0 rgba(88,204,2,0.15);
+  }
+
+  .bitxy-card-blue {
+    @apply bg-white rounded-2xl border-2 border-[#1CB0F6]/30;
+    box-shadow: 0 4px 0 0 rgba(28,176,246,0.15);
+  }
+
+  .bitxy-card-locked {
+    @apply bg-gray-100 rounded-2xl border-2 border-gray-200;
+    box-shadow: 0 4px 0 0 rgba(0,0,0,0.04);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .path-line {
+    background: linear-gradient(to bottom, #E5E7EB 0%, #E5E7EB 100%);
+  }
+  .path-line-active {
+    background: linear-gradient(to bottom, #58CC02 0%, #89E219 100%);
+  }
+}
+
+/* Code editor */
+.code-editor {
+  background: #1a1a2e;
+  border: 2px solid rgba(0,0,0,0.08);
+  border-radius: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  tab-size: 2;
+}
+
+/* Animations */
+@keyframes bounce-in {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.15); }
+  70% { transform: scale(0.95); }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+@keyframes confetti {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-200px) rotate(720deg); opacity: 0; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+@keyframes star-pop {
+  0% { transform: scale(0) rotate(-180deg); }
+  70% { transform: scale(1.3) rotate(10deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+@keyframes wobble {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-bounce-in { animation: bounce-in 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+.animate-shake { animation: shake 0.3s ease-in-out; }
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-pulse-ring { animation: pulse-ring 1.5s ease-out infinite; }
+.animate-star-pop { animation: star-pop 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+.animate-wobble { animation: wobble 0.6s ease-in-out; }
+.animate-slide-up { animation: slide-up 0.3s ease-out; }
+.animate-slide-down { animation: slide-down 0.3s ease-out; }
